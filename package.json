@@ -17,6 +17,6 @@
     "astronomy-engine": "^2.1.17"
   },
   "engines": {
-    "node": "14.x"
+    "node": ">=18.0.0"
   }
 }
