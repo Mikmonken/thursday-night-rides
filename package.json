@@ -1,0 +1,22 @@
+{
+  "name": "cycling-weather-app",
+  "version": "1.0.0",
+  "description": "Weather and cycling info for Macclesfield",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "node-fetch": "^2.6.1",
+    "dotenv": "^10.0.0",
+    "ejs": "^3.1.6",
+    "cheerio": "^1.0.0-rc.12",
+    "axios": "^1.6.7",
+    "astronomy-engine": "^2.1.17"
+  },
+  "engines": {
+    "node": "14.x"
+  }
+}
