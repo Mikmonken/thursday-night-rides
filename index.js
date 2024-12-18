@@ -44,6 +44,10 @@ app.get('/', async (req, res) => {
         );
         const weatherData = await weatherResponse.json();
 
+        // Get wind speed and convert from m/s to mph
+        const windSpeed = Math.round(weatherData.list[0].wind.speed * 2.237); // Convert m/s to mph
+        const isWindy = windSpeed > 10; // Consider it windy if over 10 mph
+
         // Get sunset time
         const sunsetResponse = await fetch(
             `https://api.sunrise-sunset.org/json?lat=53.2587&lng=-2.1270&formatted=0&date=${thursday.toISOString().split('T')[0]}`
@@ -53,6 +57,8 @@ app.get('/', async (req, res) => {
         // Generate fun data
         const data = {
             willItRain: weatherData.list[0].weather[0].main === 'Rain' ? 'Yes! 🌧️' : 'Nope! ☀️',
+            isWindy: isWindy ? "Yes! Dave's going to fly! 🌪️" : "Nope, Dave's safe today 🌤️",
+            windSpeed: windSpeed,
             hannoLateness: getRandomNumber(0, 30),
             helmetWonkiness: getRandomNumber(1, 45),
             sunset: new Date(sunsetData.results.sunset).toLocaleTimeString('en-GB', {

@@ -1,1 +1,9 @@
- 
+services:
+  - type: web
+    name: thursday-night-rides
+    env: node
+    buildCommand: npm install
+    startCommand: node index.js
+    envVars:
+      - key: WEATHER_API_KEY
+        value: 85ed5a0f3ae71aeebd8eb08ffe1eec4b 

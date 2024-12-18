@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚲</text></svg>">
     <title>Macclesfield Cycling Weather</title>
     <style>
         body {
@@ -67,6 +68,11 @@
         .info-box:hover p {
             opacity: 1;
         }
+        .wind-speed {
+            font-size: 1rem;
+            opacity: 0.8;
+            margin-top: 0.5rem;
+        }
     </style>
 </head>
 <body style="background-color: <%= backgroundColor %>">
@@ -76,6 +82,12 @@
         <div class="info-box">
             <h2>Will it rain on Thursday at 19:45? 🌧️</h2>
             <p><%= willItRain %></p>
+        </div>
+
+        <div class="info-box">
+            <h2>Is it Dave Windy? 💨</h2>
+            <p><%= isWindy %></p>
+            <p class="wind-speed">Wind speed: <%= windSpeed %> mph</p>
         </div>
 
         <div class="info-box">
